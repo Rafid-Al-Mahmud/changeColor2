@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHANGE COLOR</title>
+  </head>
+  <body onclick="openFullscreen()" ondblclick="exitFullscreen()">
+    <!-- <form action="/register" method="POST">
+      <div>
+        <label for="fullName">Full Name: </label>
+        <input type="text" name="fullName" id="fullName" />
+      </div>
+      <div>
+        <label for="age">Age: </label>
+        <input type="text" name="age" id="age" />
+      </div>
+      <button type="submit">Register</button>
+    </form> -->
+    <script>
+        var i = 0;
+        function loadDoc(x) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                var data = JSON.parse(this.responseText);
+                // document.querySelector("body").innerHTML +=
+                // i+": "+data.bg+"<br>";
+                document.body.style.background=data.bg;
+                i++;
+            }
+            xhttp.open("GET", x);
+            xhttp.send();
+        }
+        setInterval(() => {loadDoc("/data")}, 10);
+
+
+        function openFullscreen() {
+            let elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        /* Close fullscreen */
+        function closeFullscreen() {
+            let elem = document.documentElement;
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+    </script>
+  </body>
+</html>

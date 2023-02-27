@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script> -->
+  <title>Color Changer</title>
+  <style>
+      .box{
+      display: flex;
+      padding: 5px;
+      margin: 10px;
+      /*box-shadow: 0 0 10px 5px #eeea;*/
+      /*border-radius: 10px;*/
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .box>div{
+      display: flex;
+      padding: 5px;
+      margin: 10px;
+      box-shadow: 0 0 10px 5px #eeea;
+      width: 100px;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .box#defaultBox>div{
+      height: 100px;
+    }
+    .box>div:hover{
+      cursor: pointer;
+    }
+    button{
+      display: flex;
+      padding: 5px;
+      margin: 10px;
+      box-shadow: 0 0 10px 5px #eeea;
+      background-color: #0d6efd;
+      color:#fff;
+      border: none;
+      width: 100px;
+      border-radius: 2px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    button:hover{background-color: #0a58ca;cursor: pointer;}
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center">Color Controller</h1>
+  <form action="/register" method="POST">
+    <!--<div>
+      <label>Colour Name: </label>
+      <input type="text" oninput="changeColor(this.value)"/>
+    </div>-->
+    <div>
+      <label for="bg">Colour Name: </label>
+      <input type="color" id="bg" name="bg" />
+    </div>
+    <button type="submit">Change</button>
+  </form>
+  <h3>Change Colors<span style="color:gray;">(By Click)</span></h3>
+  <h4>Default Colors:</h4>
+  <div class="box" id="defaultBox">
+    <div onclick="changeColor('#ff0000')" style="background-color: #ff0000;">RED</div>
+    <div onclick="changeColor('#008000')" style="background-color: #008000;">GREEN</div>
+    <div onclick="changeColor('#0000ff')" style="background-color: #0000ff;">BLUE</div>
+    <div onclick="changeColor('#ffa500')" style="background-color: #ffa500;">ORANGE</div>
+    <div onclick="changeColor('#ee82ee')" style="background-color: #ee82ee;">VIOLET</div>
+    <div onclick="changeColor('#ffc0cb')" style="background-color: #ffc0cb;">PINK</div>
+    <div onclick="changeColor('#000000')" style="background-color: #000000;">BLACK</div>
+    <div onclick="changeColor('#ffffff')" style="background-color: #ffffff;">WHITE</div>
+    <div onclick="changeColor('#808080')" style="background-color: #808080;">GRAY</div>
+  </div>
+  <h4>Tailwind Colors:</h4>
+  <h5>Red</h5>
+  <div class="box">
+    <div onclick="changeColor('#FEF2F2')" style="background-color: #FEF2F2">50</div>
+    <div onclick="changeColor('#FEE2E2')" style="background-color: #FEE2E2">100</div>
+    <div onclick="changeColor('#FECACA')" style="background-color: #FECACA">200</div>
+    <div onclick="changeColor('#FCA5A5')" style="background-color: #FCA5A5">300</div>
+    <div onclick="changeColor('#F87171')" style="background-color: #F87171">400</div>
+    <div onclick="changeColor('#EF4444')" style="background-color: #EF4444">500</div>
+    <div onclick="changeColor('#DC2626')" style="background-color: #DC2626">600</div>
+    <div onclick="changeColor('#B91C1C')" style="background-color: #B91C1C">700</div>
+    <div onclick="changeColor('#991B1B')" style="background-color: #991B1B">800</div>
+    <div onclick="changeColor('#7F1D1D')" style="background-color: #7F1D1D">900</div>
+  </div>
+  <h5>Orange</h5>
+  <div class="box">
+    <div onclick="changeColor('#FFF7ED')" style="background-color: #FFF7ED">50</div>
+    <div onclick="changeColor('#FFEDD5')" style="background-color: #FFEDD5">100</div>
+    <div onclick="changeColor('#FED7AA')" style="background-color: #FED7AA">200</div>
+    <div onclick="changeColor('#FDBA74')" style="background-color: #FDBA74">300</div>
+    <div onclick="changeColor('#FB923C')" style="background-color: #FB923C">400</div>
+    <div onclick="changeColor('#F97316')" style="background-color: #F97316">500</div>
+    <div onclick="changeColor('#EA580C')" style="background-color: #EA580C">600</div>
+    <div onclick="changeColor('#C2410C')" style="background-color: #C2410C">700</div>
+    <div onclick="changeColor('#9A3412')" style="background-color: #9A3412">800</div>
+    <div onclick="changeColor('#7C2D12')" style="background-color: #7C2D12">900</div>
+  </div>
+  <h5>Yellow</h5>
+  <div class="box">
+    <div onclick="changeColor('#FFFBEB')" style="background-color: #FFFBEB">50</div>
+    <div onclick="changeColor('#FEF3C7')" style="background-color: #FEF3C7">100</div>
+    <div onclick="changeColor('#FDE68A')" style="background-color: #FDE68A">200</div>
+    <div onclick="changeColor('#FCD34D')" style="background-color: #FCD34D">300</div>
+    <div onclick="changeColor('#FBBF24')" style="background-color: #FBBF24">400</div>
+    <div onclick="changeColor('#F59E0B')" style="background-color: #F59E0B">500</div>
+    <div onclick="changeColor('#D97706')" style="background-color: #D97706">600</div>
+    <div onclick="changeColor('#B45309')" style="background-color: #B45309">700</div>
+    <div onclick="changeColor('#92400E')" style="background-color: #92400E">800</div>
+    <div onclick="changeColor('#78350F')" style="background-color: #78350F">900</div>
+  </div>
+  <h5>Lime</h5>
+  <div class="box">
+    <div onclick="changeColor('#F7FEE7')" style="background-color: #F7FEE7">50</div>
+    <div onclick="changeColor('#ECFCCB')" style="background-color: #ECFCCB">100</div>
+    <div onclick="changeColor('#D9F99D')" style="background-color: #D9F99D">200</div>
+    <div onclick="changeColor('#D9F99D')" style="background-color: #D9F99D">300</div>
+    <div onclick="changeColor('#A3E635')" style="background-color: #A3E635">400</div>
+    <div onclick="changeColor('#84CC16')" style="background-color: #84CC16">500</div>
+    <div onclick="changeColor('#65A30D')" style="background-color: #65A30D">600</div>
+    <div onclick="changeColor('#4D7C0F')" style="background-color: #4D7C0F">700</div>
+    <div onclick="changeColor('#3F6212')" style="background-color: #3F6212">800</div>
+    <div onclick="changeColor('#365314')" style="background-color: #365314">900</div>
+  </div>
+  <h5>Green</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Emerald</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Teal</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Cyan</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Light Blue</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Blue</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Indigo</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Violet</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Purple</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Fuchsia</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Pink</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Rose</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Warm Gray</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>True Gray</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  <h5>Amber</h5>
+  <div class="box">
+    <div onclick="changeColor('FFFBEB')" style="background-color: FFFBEB">50</div>
+    <div onclick="changeColor('FEF3C7')" style="background-color: FEF3C7">100</div>
+    <div onclick="changeColor('FDE68A')" style="background-color: FDE68A">200</div>
+    <div onclick="changeColor('FCD34D')" style="background-color: FCD34D">300</div>
+    <div onclick="changeColor('FBBF24')" style="background-color: FBBF24">400</div>
+    <div onclick="changeColor('F59E0B')" style="background-color: F59E0B">500</div>
+    <div onclick="changeColor('D97706')" style="background-color: D97706">600</div>
+    <div onclick="changeColor('B45309')" style="background-color: B45309">700</div>
+    <div onclick="changeColor('92400E')" style="background-color: 92400E">800</div>
+    <div onclick="changeColor('78350F')" style="background-color: 78350F">900</div>
+  </div>
+  
+
+  <script>
+var getContrastYIQ = function(color) {
+  var hex = '#';
+  var r, g, b;
+  if (color.indexOf(hex) > -1) {
+    r = parseInt(color.substr(1, 2), 16);
+    g = parseInt(color.substr(3, 2), 16);
+    b = parseInt(color.substr(5, 2), 16);
+  } else {
+    color = color.match(/\d+/g);
+    r = color[0];
+    g = color[1];
+    b = color[2];
+  }
+
+  var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? 'black' : 'white';
+}
+/*
+var rr = document.querySelectorAll(".box>div");
+for (var i = 0; i < rr.length; i++) {
+    rr[i].style.color = getContrastYIQ(rr[i].style.backgroundColor);
+}
+// #>.
+*/
+/*else if (/^rgb/.test(color)) {
+    r = parseInt(color.substr(4, 3));
+    g = parseInt(color.substr(8, 3));
+    b = parseInt(color.substr(12, 3));
+  } */
+  
+var pbg = "";
+var cbg = document.getElementsByName("bg")[0].value;
+    function changeColor(color_name) {
+      var els = document.getElementsByName("bg");
+      for (var i = 0; i < els.length; i++) {
+        els[i].value = color_name;
+        cbg=els[i].value;
+      }
+      //document.querySelector("button[type=submit]").click();
+    }
+    //setTimeout(function(){alert(cbg)},5000)
+function loadDoc(x){
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+        //document.getElementById("demo").innerHTML = this.responseText;
+    }
+    xhttp.open("POST", x);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("bg="+document.getElementsByName("bg")[0].value);
+    pbg=cbg;
+}
+setInterval(() => {if(pbg!==cbg) loadDoc("/register")}, 0);
+  </script>
+</body>
+
+</html>
